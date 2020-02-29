@@ -1,0 +1,10 @@
+image: alpine
+
+
+# TODO Instead pulling, pull into a container and cache that in the registry.
+tasks:
+        - init: >
+                cd backend && git clone https://github.com/ThePadawan/beevenue.git && cd .. &&
+                cd frontend && git clone https://github.com/ThePadawan/beevenue-ui.git && cd ..
+ports:
+        port: 3000
