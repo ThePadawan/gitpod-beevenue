@@ -8,6 +8,7 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 
+# TODO Bootstrap some demo media/tags.
 tasks:
   - init: >
       cp -a ~/beevenue-ui . &&
@@ -21,5 +22,6 @@ tasks:
       mv beevenue_rules.json beevenue/ &&
       cd beevenue &&
       env BEEVENUE_SKIP_SPINDEX=1 BEEVENUE_CONFIG_FILE="$(realpath beevenue_config.py)" FLASK_APP="$(realpath main.py)" flask db upgrade &&
+      python insert_demo_data.py &&
       cd ..
     command: cd beevenue && bash main.sh
