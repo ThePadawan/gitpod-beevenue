@@ -14,12 +14,3 @@ RUN sed -e "/psycopg2.*$/d" -i beevenue/requirements.txt
 RUN cd beevenue && pip install -r requirements.txt && pip install -r requirements.linuxonly.txt && cd ..
 
 RUN cd beevenue-ui && npm install && cd ..
-
-# Install custom tools, runtime, etc. using apt-get
-# For example, the command below would install "bastet" - a command line tetris clone:
-#
-# RUN sudo apt-get -q update && \
-#     sudo apt-get install -yq bastet && \
-#     sudo rm -rf /var/lib/apt/lists/*
-#
-# More information: https://www.gitpod.io/docs/config-docker/
