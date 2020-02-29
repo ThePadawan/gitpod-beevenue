@@ -2,6 +2,8 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
+RUN pyenv install 3.7.6 && pyenv global 3.7.6
+
 RUN git clone https://github.com/ThePadawan/beevenue.git && \
     git clone https://github.com/ThePadawan/beevenue-ui.git
 
