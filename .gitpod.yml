@@ -22,6 +22,6 @@ tasks:
       mv beevenue_rules.json beevenue/ &&
       cd beevenue &&
       env BEEVENUE_SKIP_SPINDEX=1 BEEVENUE_CONFIG_FILE="$(realpath beevenue_config.py)" FLASK_APP="$(realpath main.py)" flask db upgrade &&
-      python insert_demo_data.py &&
-      cd ..
+      cd .. &&
+      python insert_demo_data.py
     command: cd beevenue && bash main.sh
