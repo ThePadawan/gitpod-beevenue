@@ -2,8 +2,10 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
-RUN mkdir -p backend && cd backend && git clone https://github.com/ThePadawan/beevenue.git && cd .. && \
-    mkdir -p frontend && cd frontend && git clone https://github.com/ThePadawan/beevenue-ui.git && cd ..
+WORKDIR /workspace/gitpod-beevenue
+
+RUN git clone https://github.com/ThePadawan/beevenue.git && \
+    git clone https://github.com/ThePadawan/beevenue-ui.git
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:

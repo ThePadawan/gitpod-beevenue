@@ -7,6 +7,10 @@ ports:
     onOpen: open-preview
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+
+# TODO: Create some config files and move them into the respective folders before starting the dev servers.
 tasks:
-  - init: cd frontend && npm install && cd ..
-    command: npm start
+  - init: cd beevenue-ui && npm install && cd ..
+    command: cd beevenue-ui && npm start
+  - init: cd beevenue && pip install -r requirements.txt && pip install -r requirements.linuxonly.txt
+    command: bash main.sh
