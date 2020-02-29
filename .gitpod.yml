@@ -11,10 +11,8 @@ ports:
 # TODO: Create some config files and move them into the respective folders before starting the dev servers.
 tasks:
   - init: >
-      cp -a ~/beevenue-ui . && cd beevenue-ui && npm install && cd .. &&
-      mv ui-config.json beevenue-ui/src/config.json
+      cp -a ~/beevenue-ui .
     command: cd beevenue-ui && npm start
   - init: >
-      cp -a ~/beevenue . && cd beevenue && pip install -r requirements.txt &&
-      pip install -r requirements.linuxonly.txt
+      cp -a ~/beevenue .
     command: bash main.sh

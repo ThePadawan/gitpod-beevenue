@@ -11,6 +11,11 @@ RUN git clone https://github.com/ThePadawan/beevenue.git && \
 # Thus, we don't have to install this huge requirement, speeding things up a bit.
 RUN sed -e "/psycopg2.*$/d" -i beevenue/requirements.txt
 
+RUN cd beevenue && pip install -r requirements.txt && pip install -r requirements.linuxonly.txt && cd .. &&\
+    mv beevenue_config.py beevenue/ && beevenue_rules.json beevenue/
+
+RUN cd beevenue-ui && npm install && cd .. && mv ui-config.json beevenue-ui/src/config.json
+
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
 #

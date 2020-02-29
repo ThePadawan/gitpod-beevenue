@@ -1,0 +1,14 @@
+[
+  {
+    "if": {
+      "data": "q",
+      "type": "hasRating"
+    },
+    "then": [
+      {
+        "data": [".*2f"],
+        "type": "hasAnyTagsLike"
+      }
+    ]
+  }
+]
