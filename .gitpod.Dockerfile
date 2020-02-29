@@ -1,0 +1,15 @@
+FROM gitpod/workspace-full
+
+USER gitpod
+
+RUN cd backend && git clone https://github.com/ThePadawan/beevenue.git && cd .. && \
+    cd frontend && git clone https://github.com/ThePadawan/beevenue-ui.git && cd ..
+
+# Install custom tools, runtime, etc. using apt-get
+# For example, the command below would install "bastet" - a command line tetris clone:
+#
+# RUN sudo apt-get -q update && \
+#     sudo apt-get install -yq bastet && \
+#     sudo rm -rf /var/lib/apt/lists/*
+#
+# More information: https://www.gitpod.io/docs/config-docker/
