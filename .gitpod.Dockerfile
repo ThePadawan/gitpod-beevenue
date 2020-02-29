@@ -2,8 +2,6 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
-WORKDIR /workspace/gitpod-beevenue
-
 RUN git clone https://github.com/ThePadawan/beevenue.git && \
     git clone https://github.com/ThePadawan/beevenue-ui.git
 
