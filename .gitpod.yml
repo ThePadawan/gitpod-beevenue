@@ -8,11 +8,13 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 
-# TODO: Create some config files and move them into the respective folders before starting the dev servers.
 tasks:
   - init: >
-      cp -a ~/beevenue-ui .
+      cp -a ~/beevenue-ui . &&
+      mv ui-config.json beevenue-ui/src/config.json
     command: cd beevenue-ui && npm start
   - init: >
-      cp -a ~/beevenue .
+      cp -a ~/beevenue . &&
+      mv beevenue_config.py beevenue/ &&
+      mv beevenue_rules.json beevenue/
     command: bash main.sh
