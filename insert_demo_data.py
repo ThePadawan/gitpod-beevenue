@@ -1,7 +1,8 @@
 import os
 import sqlite3
 
-if __name__ == "__main__":
+
+def _execute_sql():
     temp_path = os.path.abspath("./beevenue/gitpod.sqlite")
 
     with open("demo.sql", "rb") as f:
@@ -12,3 +13,7 @@ if __name__ == "__main__":
     conn.executescript(DEMO_SQL)
     conn.commit()
     conn.close()
+
+
+if __name__ == "__main__":
+    _execute_sql()
