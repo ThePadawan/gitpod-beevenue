@@ -4,6 +4,9 @@ USER gitpod
 
 RUN pyenv install -s 3.8.1 && pyenv global 3.8.1
 
+RUN sudo apt-get update && sudo apt-get install -y ffmpeg && sudo apt-get clean &&\
+    rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/*
+
 ADD https://api.github.com/repos/ThePadawan/beevenue/git/commits/001596dea228fea11b55ebb07570401a1640f533 beevenue-version.json
 RUN git clone https://github.com/ThePadawan/beevenue.git
 
