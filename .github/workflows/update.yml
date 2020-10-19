@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
-        with:        
-            persist-credentials: false
-            fetch-depth: 0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - name: Install Python 3.8
         uses: actions/setup-python@v2
         with:
@@ -26,10 +26,10 @@ jobs:
         run: echo $GITPOD_BEEVENUE_SUB_COUNT
       - name: Commit files
         run: |
-        git config --local user.email "prbot@prat.ch"
-        git config --local user.name "PRBot"
-        git add .gitpod.Dockerfile
-        git commit -m "Update remote head commit (x${GITPOD_BEEVENUE_SUB_COUNT})"
+          git config --local user.email "prbot@prat.ch"
+          git config --local user.name "PRBot"
+          git add .gitpod.Dockerfile
+          git commit -m "Update remote head commit (x${GITPOD_BEEVENUE_SUB_COUNT})"
     # - name: Push changes
     #     uses: ad-m/github-push-action@master
     #     with:
