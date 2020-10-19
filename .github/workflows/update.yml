@@ -24,6 +24,7 @@ jobs:
         run: python update.py
       - name: Debug output (should be skipped if 0 changes)
         if: ${{ $GITPOD_BEEVENUE_SUB_COUNT != "0" }}
+        run: echo $GITPOD_BEEVENUE_SUB_COUNT
       - name: Commit files
         if: ${{ $GITPOD_BEEVENUE_SUB_COUNT != "0" }}
         run: |
