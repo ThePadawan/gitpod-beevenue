@@ -1,5 +1,6 @@
 name: Keep pulled commits up-to-date
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 2 * * *" # daily at 2am
 
