@@ -23,17 +23,17 @@ jobs:
       - name: Check remote heads for commit IDs
         run: python update.py
       - name: Debug output (should be skipped if 0 changes)
-        if: ${{ env.GITPOD_BEEVENUE_SUB_COUNT != "0" }}
+        if: env.GITPOD_BEEVENUE_SUB_COUNT > 0
         run: echo $GITPOD_BEEVENUE_SUB_COUNT
       - name: Commit files
-        if: ${{ env.GITPOD_BEEVENUE_SUB_COUNT != "0" }}
+        if: env.GITPOD_BEEVENUE_SUB_COUNT > 0
         run: |
           git config --local user.email "prbot@prat.ch"
           git config --local user.name "PRBot"
           git add .gitpod.Dockerfile
           git commit -m "Update remote head commit (x${GITPOD_BEEVENUE_SUB_COUNT})"
       - name: Push changes
-        if: ${{ env.GITPOD_BEEVENUE_SUB_COUNT != "0" }}
+        if: env.GITPOD_BEEVENUE_SUB_COUNT > 0
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
