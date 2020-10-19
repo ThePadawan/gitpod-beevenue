@@ -7,10 +7,10 @@ RUN pyenv install -s 3.8.1 && pyenv global 3.8.1
 RUN sudo apt-get update && sudo apt-get install -y ffmpeg && sudo apt-get clean &&\
     sudo rm -rf /var/cache/apt/* && sudo rm -rf /var/lib/apt/lists/*
 
-ADD https://api.github.com/repos/ThePadawan/beevenue/git/commits/36174f70dd2a8fd489c235726affcfde5b5f60df beevenue-version.json
+ADD https://api.github.com/repos/ThePadawan/beevenue/git/commits/faa0d6b1762cf49be48a71bf50fba24c5d8071b2 beevenue-version.json
 RUN git clone https://github.com/ThePadawan/beevenue.git
 
-ADD https://api.github.com/repos/ThePadawan/beevenue-ui/git/commits/c0fce91f41bd65052663656a5545c972226157f9 beevenue-ui-version.json
+ADD https://api.github.com/repos/ThePadawan/beevenue-ui/git/commits/bf1531fdbf788e38adf253bb4c7c4b0cff703c18 beevenue-ui-version.json
 RUN git clone https://github.com/ThePadawan/beevenue-ui.git
 
 # Since this is a dev environment, we won't use PostgreSQL, but something lighterweight instead.
