@@ -30,8 +30,8 @@ jobs:
           git config --local user.name "PRBot"
           git add .gitpod.Dockerfile
           git commit -m "Update remote head commit (x${GITPOD_BEEVENUE_SUB_COUNT})"
-    # - name: Push changes
-    #     uses: ad-m/github-push-action@master
-    #     with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     branch: master
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
