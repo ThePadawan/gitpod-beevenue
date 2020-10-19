@@ -1,0 +1,32 @@
+name: Keep pulled commits up-to-date
+on:
+  schedule:
+    - cron: "0 2 * * *" # daily at 2am
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Install Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+      - name: Install dependencies
+        run: pip install -r requests
+      - name: Check remote heads for commit IDs
+        run: python update.py
+      - name: Debug output
+        run: echo $GITPOD_BEEVENUE_SUB_COUNT
+    # TODO: Test me
+    #   - name: Create PR (if necessary)
+    #     id: cpr
+    #     uses: peter-evans/create-pull-request@v2
+    #     with:
+    #       token: ${{ secrets.GITHUB_TOKEN }}
+    #       commit-message: "Autoformat changes"
+    #       title: "Autoformat changes"
+    #       author: "PRBot <prbot@prat.ch>"
+    #       body: Please merge these autoformatting changes.
