@@ -35,12 +35,12 @@ def main():
 
     total_sub_count = 0
     for repo, sha in commit_shas.items():
+        old_file_contents = file_contents
         regex = get_regex(repo)
-        (file_contents, sub_count) = regex.subn(
-            f"{get_prefix(repo)}{sha}", file_contents
-        )
+        file_contents = regex.sub(f"{get_prefix(repo)}{sha}", file_contents)
 
-        total_sub_count += sub_count
+        if file_contents != old_file_contents:
+            total_sub_count += 1
 
     env_file_path = os.environ["GITHUB_ENV"]
     with open(env_file_path, "a") as f:
