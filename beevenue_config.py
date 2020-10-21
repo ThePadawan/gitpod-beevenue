@@ -20,12 +20,6 @@ BEEVENUE_RULES_FILE = "./beevenue_rules.json"
 CACHE_DIR = "./beevenue_cache"
 
 COMMIT_ID = "asdf"
-
-SASHIMMIE_CLIENT_ID = None
-SASHIMMIE_CLIENT_SECRET = None
-SASHIMMIE_REFRESH_TOKEN = None
-SASHIMMIE_TUMBLR_CONSUMER_KEY = None
-SASHIMMIE_USER_AGENT = "sashimmie:v0.0.7 (by /u/ThePadawan)"
-SASHIMMIE_REDDIT_USERNAME = None
+SENTRY_DSN = "https://examplePublicKey@o0.ingest.sentry.io/0"
 
 SECRET_KEY = "CHANGE-ME_LATER"
