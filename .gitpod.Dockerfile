@@ -10,7 +10,7 @@ RUN sudo apt-get update && sudo apt-get install -y ffmpeg && sudo apt-get clean 
 ADD https://api.github.com/repos/ThePadawan/beevenue/git/commits/31bc6c4eccc7cd7c962c96a711dc3b2afad4238f beevenue-version.json
 RUN git clone https://github.com/ThePadawan/beevenue.git
 
-ADD https://api.github.com/repos/ThePadawan/beevenue-ui/git/commits/bf1531fdbf788e38adf253bb4c7c4b0cff703c18 beevenue-ui-version.json
+ADD https://api.github.com/repos/ThePadawan/beevenue-ui/git/commits/530806689440185dd67b2727d1c6e5062611cc84 beevenue-ui-version.json
 RUN git clone https://github.com/ThePadawan/beevenue-ui.git
 
 # Since this is a dev environment, we won't use PostgreSQL, but something lighterweight instead.
